@@ -6,8 +6,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 # Slopworks project template
 
 The starting point for new [The Fisher Slopworks Co](https://github.com/The-Fisher-Slopworks-Co)
-repositories. It ships the licensing and governance baseline every project is
-expected to have, already wired up and passing checks:
+repositories. It ships the **licensing baseline** every project must carry
+physically (licensing can't be inherited), already wired up and passing checks:
 
 - **License — AGPL-3.0-or-later.** Root [`LICENSE`](LICENSE) plus the canonical
   SPDX text in [`LICENSES/`](LICENSES/).
@@ -15,10 +15,11 @@ expected to have, already wired up and passing checks:
   that declares the whole tree as `AGPL-3.0-or-later` © *The Fisher Slopworks Co*,
   and a [`reuse.yml`](.github/workflows/reuse.yml) workflow that enforces `reuse lint`
   on every push and pull request.
-- **[Code of Conduct](CODE_OF_CONDUCT.md)** — an original, project-owned policy under AGPL-3.0-or-later.
-- **[Security policy](SECURITY.md)** — private disclosure via GitHub plus
-  `security@slopworks.org`.
-- **[Contributing guide](CONTRIBUTING.md)** — including the SPDX/REUSE rules.
+
+Governance docs — the **Code of Conduct, security policy, and contributing
+guide** — are deliberately **not** shipped here. They are inherited org-wide from
+[`The-Fisher-Slopworks-Co/.github`](https://github.com/The-Fisher-Slopworks-Co/.github),
+so every repository gets them automatically without a per-repo copy.
 
 ## Using it
 
@@ -30,12 +31,10 @@ expected to have, already wired up and passing checks:
    ./scripts/init.sh
    ```
 
-   It asks for the project name and tagline, fills in the placeholders, writes a
-   fresh project `README.md`, deletes itself, and runs `reuse lint` to confirm
-   the repository is still compliant. (You can also run it non-interactively:
+   It asks for the project name and tagline, writes a fresh project `README.md`,
+   deletes itself, and runs `reuse lint` to confirm the repository is still
+   compliant. (You can also run it non-interactively:
    `./scripts/init.sh "My Project" "A short tagline."`)
-3. Replace the setup/test command placeholders in `CONTRIBUTING.md` with the real
-   ones for your stack, then commit.
 
 ## Keeping a project compliant
 

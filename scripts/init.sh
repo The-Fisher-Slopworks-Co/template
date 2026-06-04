@@ -3,8 +3,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 #
 # One-shot initializer for a repository created from the Slopworks template.
-# Fills in the project name/tagline, writes a fresh project README, removes this
-# script, and verifies REUSE compliance.
+# Writes a fresh project README, removes this script, and verifies REUSE
+# compliance.
 #
 # Usage:
 #   ./scripts/init.sh                       # interactive prompts
@@ -40,17 +40,6 @@ if [ -z "$PROJECT_TAGLINE" ]; then
 fi
 PROJECT_TAGLINE="${PROJECT_TAGLINE:-$PROJECT_NAME}"
 
-# --- escape a string for safe use as a sed replacement ----------------------
-sed_escape() { printf '%s' "$1" | sed -e 's/[&|\\]/\\&/g'; }
-esc_name="$(sed_escape "$PROJECT_NAME")"
-esc_tagline="$(sed_escape "$PROJECT_TAGLINE")"
-
-# --- substitute placeholders in the governance files ------------------------
-for f in SECURITY.md CONTRIBUTING.md; do
-  [ -f "$f" ] || continue
-  sed -i "s|{{PROJECT_NAME}}|$esc_name|g; s|{{PROJECT_TAGLINE}}|$esc_tagline|g" "$f"
-done
-
 # --- write a fresh project README (replaces the template's own README) ------
 cat > README.md <<EOF
 <!--
@@ -69,8 +58,9 @@ $PROJECT_NAME is licensed under [AGPL-3.0-or-later](LICENSE) and is
 
 ## Contributing
 
-See [CONTRIBUTING.md](CONTRIBUTING.md), the [Code of Conduct](CODE_OF_CONDUCT.md),
-and the [security policy](SECURITY.md).
+Contribution guidelines, the Code of Conduct, and the security policy are shared
+org-wide via
+[The-Fisher-Slopworks-Co/.github](https://github.com/The-Fisher-Slopworks-Co/.github).
 EOF
 
 # --- remove this initializer (and scripts/ if now empty) --------------------
@@ -92,6 +82,6 @@ fi
 
 echo
 echo "Next steps:"
-echo "  1. Edit README.md, CONTRIBUTING.md (setup/test commands), and SECURITY.md."
-echo "  2. Add SPDX headers to new source files (see CONTRIBUTING.md)."
+echo "  1. Edit README.md to describe your project."
+echo "  2. Add SPDX headers to new source files (see REUSE.toml)."
 echo "  3. git add -A && git commit"
