@@ -12,11 +12,10 @@ expected to have, already wired up and passing checks:
 - **License — AGPL-3.0-or-later.** Root [`LICENSE`](LICENSE) plus the canonical
   SPDX text in [`LICENSES/`](LICENSES/).
 - **[REUSE](https://reuse.software/) compliance.** A [`REUSE.toml`](REUSE.toml)
-  that declares the whole tree as `AGPL-3.0-or-later` © *The Fisher Slopworks Co*
-  (with the Code of Conduct correctly kept under `CC-BY-4.0`), and a
-  [`reuse.yml`](.github/workflows/reuse.yml) workflow that enforces `reuse lint`
+  that declares the whole tree as `AGPL-3.0-or-later` © *The Fisher Slopworks Co*,
+  and a [`reuse.yml`](.github/workflows/reuse.yml) workflow that enforces `reuse lint`
   on every push and pull request.
-- **[Code of Conduct](CODE_OF_CONDUCT.md)** — Contributor Covenant v2.1.
+- **[Code of Conduct](CODE_OF_CONDUCT.md)** — an original, project-owned policy under AGPL-3.0-or-later.
 - **[Security policy](SECURITY.md)** — private disclosure via GitHub plus
   `security@slopworks.org`.
 - **[Contributing guide](CONTRIBUTING.md)** — including the SPDX/REUSE rules.

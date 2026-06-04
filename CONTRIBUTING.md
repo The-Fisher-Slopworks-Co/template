@@ -55,7 +55,7 @@ reuse lint          # must report "compliant"; CI enforces this on every push
 
 ## Code of Conduct
 
-This project follows the [Contributor Covenant](./CODE_OF_CONDUCT.md). By
+This project follows its [Code of Conduct](./CODE_OF_CONDUCT.md). By
 participating you are expected to uphold it.
 
 ## Reporting bugs & vulnerabilities
